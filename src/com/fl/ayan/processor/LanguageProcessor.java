@@ -113,7 +113,7 @@ public class LanguageProcessor {
         System.out.println(docDistAngleMaps);
         return docDistAngleMaps.entrySet().stream()
                 .filter(entry -> !Double.isNaN(entry.getValue()))
-                .min(Comparator.comparing(Map.Entry::getValue))
+                .min(Map.Entry.comparingByValue())
                 .get()
                 .getKey();
     }
